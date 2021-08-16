@@ -1,0 +1,150 @@
+<link>
+<style>
+body {
+background: #638cb8;
+}
+
+input{
+width:100%;
+padding:12px 20px;
+margin:8px 0;
+box-sizing:border-box;
+ border-radius: 40px;
+}
+input:hover {
+    animation: move 2s linear alternate infinite;
+     border-radius: 40px;
+}
+
+input::placeholder{
+background-color:#d3d3d3;
+
+}
+.submit{
+background-color:#6BA3E8;
+}
+
+.center-column{
+width:600px;
+margin:20px auto ;
+padding:20px;
+background-color:#fff;
+border-radius:3px;
+box-shadow:6px 2px 30px 0px rgba(0,0,0,75);
+}
+.item-row{
+margin:10px;
+padding:20px;
+background-color:#906abd;
+border-radius:3px;
+color: #fff;
+font-size: 16px
+box-shadow:0px -1px 10px -4px rgba(0,0,0,75);
+
+}
+ @keyframes move {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+.btn {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    color: white;
+    line-height: 80px;
+    font-size: 30px;
+    font-family: sans-serif;
+    text-transform: uppercase;//转化为大写字母
+    text-align: center;
+    border-radius: 40px;
+    background: linear-gradient(90deg,rgb(242, 97, 94),rgb(234, 150, 104),rgb(251, 200, 2),rgb(174, 9, 43),rgb(108, 40, 243),rgb(212, 4, 128),rgb(85, 132, 206));
+    background-size: 400%;
+    border: none;
+    outline: none;
+    text-shadow: 0 0 3px white,
+                 0 0 3px white,
+                 0 0 3px white;//加亮
+    z-index: 1;
+}
+.btn:hover {
+    animation: move 2s linear alternate infinite;
+}
+.btn::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 310px;
+    height: 120px;
+    background: linear-gradient(90deg,rgb(242, 97, 94),rgb(234, 150, 104),rgb(251, 200, 2),rgb(174, 9, 43),rgb(108, 40, 243),rgb(212, 4, 128),rgb(85, 132, 206));
+    background-size: 400%;
+    opacity: 0;
+    border-radius: 45px;
+    transition: .6s;
+    z-index: -1;
+}
+.btn:hover::before {
+    filter: blur(10px);
+    opacity: 1;
+    animation: move 2s linear alternate infinite;
+}
+.btn-info{
+    position: relative;
+    width: 600px;
+    height: 70px;
+    color: white;
+    line-height: 50px;
+    font-size: 30px;
+    font-family: sans-serif;
+    text-transform: uppercase;//转化为大写字母
+    text-align: center;
+    border-radius: 40px;
+    background: linear-gradient(90deg,rgb(242, 97, 94),rgb(234, 150, 104),rgb(251, 200, 2),rgb(174, 9, 43),rgb(108, 40, 243),rgb(212, 4, 128),rgb(85, 132, 206));
+    background-size: 400%;
+    border: none;
+    outline: none;
+    text-shadow: 0 0 3px white,
+                 0 0 3px white,
+                 0 0 3px white;//加亮
+    z-index: 1;
+}
+.btn-info:hover {
+    animation: move 2s linear alternate infinite;
+}
+.btn-info::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 310px;
+    height: 120px;
+    background: linear-gradient(90deg,rgb(242, 97, 94),rgb(234, 150, 104),rgb(251, 200, 2),rgb(174, 9, 43),rgb(108, 40, 243),rgb(212, 4, 128),rgb(85, 132, 206));
+    background-size: 400%;
+    opacity: 0;
+    border-radius: 45px;
+    transition: .6s;
+    z-index: -1;
+}
+.btn-info:hover::before {
+    filter: blur(10px);
+    opacity: 1;
+    animation: move 2s linear alternate infinite;
+}
+
+
+</style>
+<div class="center-column">
+
+<h3>Update Task</h3>
+
+
+<form method="POST" action="">
+    {% csrf_token %}
+    {{form}}
+    <input class="btn-info" type="submit" name="Update Task">
+</form>
+    </div>
